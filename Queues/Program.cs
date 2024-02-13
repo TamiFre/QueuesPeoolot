@@ -15,10 +15,12 @@ namespace Queues
             q1.Insert(3);
             q1.Insert(4);
             q1.Insert(5);
-            Console.WriteLine(q1);
-            Console.WriteLine(QueueHelper.Count(q1));
-            Console.WriteLine(QueueHelper.IsAsc(q1));
-            Console.WriteLine(QueueHelper.MinVal(q1));
+            //Console.WriteLine(q1);
+            //Console.WriteLine(QueueHelper.Count(q1));
+            //Console.WriteLine(QueueHelper.IsAsc(q1));
+            //Console.WriteLine(QueueHelper.MinVal(q1));
+            Console.WriteLine();
+
         }
     }
 }
