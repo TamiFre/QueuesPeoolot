@@ -345,6 +345,7 @@ namespace Queues
             return noDouble;
         }
 
+        //פעולה שבודקת אם קיים קצף בתור
         public static bool IsExistsRezef(Queue<int> q, int num)
         {
             Queue<int> temp = Copy(q);
