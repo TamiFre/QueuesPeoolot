@@ -303,5 +303,65 @@ namespace Queues
         //    //   1->5->6->7    7 ראש התור
         //}
 
+        //פעולה שמקבלת שני תורים ובודקת אם הם אותו הדבר
+        public static bool IsSame(Queue<int> q1, Queue<int> q2)
+        {
+            Queue<int> temp1 = Copy(q1);
+            Queue<int> temp2 = Copy(q2);
+            while (!temp1.IsEmpty() && !temp2.IsEmpty())
+            {
+                if (temp1.Head() != temp2.Head())
+                    return false;
+                temp1.Remove();
+                temp2.Remove();
+            }
+            return true;
+        }
+
+        //פעולה שבודקת אם יש ערך שקיים בתור
+        public static bool IsExists(Queue<int> q, int i)
+        {
+            Queue<int> temp = Copy(q);
+            while (!temp.IsEmpty())
+            {
+                if(temp.Head()==i)
+                    return true;
+                temp.Remove();
+            }
+            return false;
+        }
+
+        //פעולה שמקבלת תור ומחזירה תור חדש ללא כפילויות
+        public static Queue<int> NoDoubles(Queue<int> q)
+        {
+            Queue<int> temp = Copy(q);
+            Queue<int> noDouble = new Queue<int>();
+            while (!temp.IsEmpty())
+            {
+                if (!IsExists(noDouble, temp.Head()))
+                    noDouble.Insert(temp.Head());
+                temp.Remove();
+            }
+            return noDouble;
+        }
+
+        public static bool IsExistsRezef(Queue<int> q, int num)
+        {
+            Queue<int> temp = Copy(q);
+            while (!temp.IsEmpty())
+            {
+                if (temp.Remove() == num)
+                {
+                    if (temp.Head() != null)
+                    {
+                        if(temp.Remove()==num)
+                            return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+
     }
 }
